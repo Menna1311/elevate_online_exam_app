@@ -1,4 +1,5 @@
 import 'package:elevate_online_exam_app/di/di.dart';
+import 'package:elevate_online_exam_app/presentaion/utils.dart';
 import 'package:elevate_online_exam_app/presentaion/views/foreget_password_viewmodel.dart';
 import 'package:elevate_online_exam_app/presentaion/views/widgets/verify_otp.dart';
 import 'package:elevate_online_exam_app/presentaion/views/widgets/verify_password.dart';
@@ -76,11 +77,9 @@ class ForgetPasswordScreen extends StatelessWidget {
               );
             }
             if (state is SuccessState) {
-              Navigator.pushAndRemoveUntil(
-                context,
-                MaterialPageRoute(builder: (context) => const Scaffold()),
-                (Route<dynamic> route) => false,
-              );
+              showCustomDialog(context,
+                  message: 'password changed successfully',
+                  title: 'Password changed');
             }
             return Center(
               child: VerifyEmail(

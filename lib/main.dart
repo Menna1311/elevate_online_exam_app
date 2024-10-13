@@ -4,12 +4,12 @@ import 'package:elevate_online_exam_app/presentaion/views/forget_password_screen
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const OnlineExam());
+  runApp(const OnlineExamApp());
   configureDependencies();
 }
 
-class OnlineExam extends StatelessWidget {
-  const OnlineExam({super.key});
+class OnlineExamApp extends StatelessWidget {
+  const OnlineExamApp({super.key});
 
   @override
   Widget build(BuildContext context) {

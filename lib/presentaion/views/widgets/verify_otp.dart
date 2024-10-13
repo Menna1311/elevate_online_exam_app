@@ -1,3 +1,4 @@
+import 'package:elevate_online_exam_app/presentaion/utils.dart';
 import 'package:flutter/material.dart';
 
 class VerifyOtpWidget extends StatelessWidget {
@@ -122,6 +123,11 @@ class VerifyOtpWidget extends StatelessWidget {
                 TextButton(
                   onPressed: () {
                     sendOtp(emailController.text);
+                    showCustomDialog(
+                      context,
+                      message: 'The OTP has been resent to your email.',
+                      title: 'OTP Resent',
+                    );
                   },
                   child: const Text(
                     'Resend',
