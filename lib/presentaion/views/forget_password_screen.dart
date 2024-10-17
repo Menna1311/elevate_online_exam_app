@@ -62,7 +62,15 @@ class ForgetPasswordScreen extends StatelessWidget {
                 confirmPasswordController: _confirmPasswordController,
                 formKey: _passwordFormKey,
                 emailController: _emailController,
-                onResetPassword: resetPassword,
+                onResetPassword: (String email, String password) {
+                  resetPassword(
+                    _emailController.text,
+                    _passwordController.text,
+                  );
+                  showCustomDialog(context,
+                      message: 'password changed successfully',
+                      title: 'Password changed');
+                },
               );
             }
 

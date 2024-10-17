@@ -43,6 +43,21 @@ class VerifyPasswordWidget extends StatelessWidget {
             TextFormField(
               validator: (value) {
                 if (value == null || value.isEmpty) {
+                  return 'Invalid';
+                }
+
+                return null;
+              },
+              controller: emailController,
+              decoration: const InputDecoration(
+                label: Text('email'),
+                hintText: 'email',
+              ),
+            ),
+            const SizedBox(height: 16),
+            TextFormField(
+              validator: (value) {
+                if (value == null || value.isEmpty) {
                   return 'Invalid Password';
                 }
                 return null;
@@ -52,23 +67,6 @@ class VerifyPasswordWidget extends StatelessWidget {
                 label: const Text('New password'),
                 hintText: 'Enter your password',
                 errorText: exception != null ? 'Password is invalid ' : null,
-              ),
-            ),
-            const SizedBox(height: 16),
-            TextFormField(
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Invalid';
-                }
-                if (passwordController.text != confirmPasswordController.text) {
-                  return "Password don't match";
-                }
-                return null;
-              },
-              controller: confirmPasswordController,
-              decoration: const InputDecoration(
-                label: Text('Confirm password'),
-                hintText: 'Confirm password',
               ),
             ),
             const SizedBox(height: 50),
